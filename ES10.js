@@ -1,3 +1,22 @@
+// BigInt
+//BigInt is the 7th primitive type.
+//BigInt is an arbitrary-precision integer. What this means is that variables can now represent 2⁵³ numbers. And not just max out at 9007199254740992.
+const b = 1n; // append n to create a BigInt
+//In the past integer values greater than 9007199254740992 were not supported. If exceeded, the value would simply lock to MAX_SAFE_INTEGER + 1
+const limit = Number.MAX_SAFE_INTEGER;
+// 9007199254740991
+limit + 1;
+// 9007199254740992
+limit + 2;
+// 9007199254740992 <--- MAX_SAFE_INTEGER + 1 exceeded
+const larger = 9007199254740991n;
+// 9007199254740991n
+const integer = BigInt(9007199254740991); // initialize with number
+// 9007199254740991n
+const same = BigInt("9007199254740991"); // initialize with "string"
+// 9007199254740991n
+
+
 // Array.flat()
 // The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
 let arr = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11 ,12]]]];
@@ -137,4 +156,35 @@ if (typeof globals.setTimeout !== 'function') {
 
 //Now:
 if (typeof globalThis.setTimeout !== 'function') {
+}
+
+// Hashbang Grammar
+./index.js
+
+instead of:
+node index.js
+
+
+//ES10 Classes: private, static & public members
+//New syntax character # octothorpe (hash tag) is now used to define variables, functions, getters and setters directly inside the class body’s scope… alongside the constructor and class methods.
+class Raven extends Bird {
+  #state = { eggs: 10};
+  // getter
+  get #eggs() { 
+      return state.eggs;
+  }
+  // setter
+  set #eggs(value) {
+      this.#state.eggs = value;
+  }
+  #lay() {
+      this.#eggs++;
+  }
+  constructor() {
+      super();
+      this.#lay.bind(this);
+  }
+  #render() {
+      /* paint UI */
+  }
 }
