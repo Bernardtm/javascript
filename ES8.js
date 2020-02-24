@@ -2,7 +2,6 @@
 async function request() {}
 let response = await request();
 
-
 // Object Values 
 const object = {
   name: 'John',
@@ -14,13 +13,13 @@ console.log(Object.values(object)); // ['John', 20]
 // Object Entries
 console.log(Object.entries(object)); // [ ['name', 'John'], ['age', 20] ]
 
-
 // String Padding
 const string = '12345';
 console.log(string.padStart(10, '.'));
 console.log(string.padEnd(10, '.'));
 
-// getOwnPropertyDescriptor
+// getOwnPropertyDescriptor 
+// (.value, .writable, .get, .set, .configurable, .enumerable)
 const object1 = {
   property1: 42
 }
