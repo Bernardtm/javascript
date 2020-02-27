@@ -159,9 +159,11 @@ if (typeof globalThis.setTimeout !== 'function') {
 }
 
 // Hashbang Grammar
+#!/usr/bin/env node
+// add execution permission: chmod +x index.js
 ./index.js
 
-instead of:
+// nstead of:
 node index.js
 
 
