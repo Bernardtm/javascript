@@ -1,5 +1,5 @@
 // for a parameter x, always return y
-//Eliminar side effect
+//Eliminate side effects
 //Easy to test
 //More memory
 //Multi-core friendly
